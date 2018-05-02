@@ -1,0 +1,23 @@
+  {
+      "name": "Get user from LinkedIn.com",
+      "version": "1.0",
+      "description": "Extension gets user information (first name and last name) from profile page on LinkedIn",
+      "background": {
+          "persistent": false,
+          "scripts": ["background.js"]
+      },
+      "content_scripts": [{
+          "matches": [
+              "https://*.linkedin.com/in/*"
+          ],
+          "js": [
+              "content.js"
+          ],
+          "run_at": "document_idle",
+          "all_frames": false
+      }],
+      "page_action": {
+          "default_popup": "popup.html"
+      },
+      "manifest_version": 2
+  }
